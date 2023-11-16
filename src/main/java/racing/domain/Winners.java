@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Winners {
 
-    List<String> winners;
+    private final List<String> winners;
 
     public Winners(List<String> winners) {
         this.winners = checkWinners(winners);

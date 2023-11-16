@@ -9,17 +9,17 @@ public class CarName {
     private final String name;
 
     public CarName(String name) {
-        this.name = name;
+        this.name = checkCarName(name);
     }
 
-    public static CarName checkCarName(String carName) {
+    private String checkCarName(String carName) {
         if (carName.length() > MAX_CAR_NAME_LENGTH) {
             throw new IllegalArgumentException(ERROR_MESSAGE_FOR_OVER_CAR_NAME_LENGTH);
         }
         if (carName.isBlank()) {
             throw new IllegalArgumentException(ERROR_MESSAGE_FOR_BLANK_CAR_NAME);
         }
-        return new CarName(carName);
+        return carName;
     }
 
     public String getName() {

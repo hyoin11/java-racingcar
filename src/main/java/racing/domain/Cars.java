@@ -19,7 +19,7 @@ public class Cars {
 
     public static Cars createCars(String[] carNames) {
         return new Cars(Arrays.stream(carNames)
-                .map(name -> new Car(new CarName(CarName.checkCarName(name).getName()), new CarPosition(DEFAULT_POSITION)))
+                .map(name -> new Car(new CarName(name), new CarPosition(DEFAULT_POSITION)))
                 .collect(Collectors.toList()));
     }
 
